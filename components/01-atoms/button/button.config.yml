@@ -1,0 +1,10 @@
+title: Main Button
+variants:
+  - name: default
+    label: Primary
+    context:
+      text: Primary Button
+  - name: Secondary
+    context:
+      text: Secondary Button
+

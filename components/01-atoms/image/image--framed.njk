@@ -1,0 +1,5 @@
+{% from "@base-image" import image %}
+<div class="image__frame">
+    {{ image('/images/purple-jellyfish.jpg', null) }}{% if caption %}
+        <div class="image__caption"></div>{% endif %}
+</div>

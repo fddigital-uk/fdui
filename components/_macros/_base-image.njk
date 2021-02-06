@@ -1,0 +1,5 @@
+{% macro image(src, srcset, class = null) -%}
+<picture>
+    <img src="{{ src }}" {% if srcset %}srcset="{{ srcset }}" {% endif%}class="image{% if class %} {{ class }}{% endif %}" />
+</picture>
+{%- endmacro %}

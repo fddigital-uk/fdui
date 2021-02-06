@@ -1,0 +1,27 @@
+:root {
+  --color-primary: #38146a;
+  --color-primary-comp: #f6f0ff;
+  --color-secondary: #7e187c;
+  --color-secondary-comp: #f9f2f8;
+
+  --spacing-inner: 1rem;
+
+  --border-radius: 1rem;
+  --border-width: 0;
+
+  --text-color: var(--color-primary);
+  --background-color: var(--color-primary);
+
+  --font-family: arial;
+  --font-family-heading: arial;
+
+  --shadow: 0.2rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: var(--font-family);
+}
