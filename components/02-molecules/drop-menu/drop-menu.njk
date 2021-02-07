@@ -1,8 +1,5 @@
-<{{ type }} class="drop-menu color--primary">
-    <a href="{{ url }}" aria-haspopup="true" aria-expanded="false" class="drop-menu__link">
-        <span class="drop-menu__link-text">{{ text }}</span>
-        {{ 'fi-rr-caret-down' | icon }}
-    </a>
+<{{ type }} class="drop-menu color--primary {{ class }}">
+    {% render '@button', { text: text, icon: 'fi-rr-caret-down', class: 'drop-menu__link ', attrs: {'aria-expanded': 'false', 'aria-haspopup': 'true' } } %}
     <ul class="drop-menu__sub">
         {% for item in items -%}
             <li class="drop-menu__sub-item"><a href="{{ item.url }}">{{ item.text }}</a></li>

@@ -29,7 +29,6 @@ class DropMenu {
   }
 
   toggleSubMenu(event) {
-    console.log("click");
     if (this.show) {
       this.hideSubMenu();
     } else {

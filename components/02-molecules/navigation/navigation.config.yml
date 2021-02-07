@@ -1,0 +1,29 @@
+context:
+  items:
+    - isLink: true
+      text: Home
+      url: /
+    - isSubNav: true
+      text: Shop
+      url: /shop/
+      items:
+        - url: /shop/category-1/
+          text: Category 1
+        - url: /shop/category-2/
+          text: Category 2
+        - url: /shop/category-3/
+          text: Category 3
+    - isSubNav: true
+      text: Help
+      items:
+        - url: /faq/
+          text: FAQs
+        - url: /support/
+          text: Support
+        - url: /about/
+          text: About
+    - isLink: true
+      text: Blog
+      url: /blog/
+variants:
+  - name: default

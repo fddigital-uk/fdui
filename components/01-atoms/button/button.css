@@ -1,6 +1,7 @@
 .button {
   --background-color: var(--color-primary-comp);
   --text-color: var(--color-primary);
+  --padding: var(--spacing-inner) calc(var(--spacing-inner) * 2);
 }
 
 .button--secondary {
@@ -9,11 +10,12 @@
 }
 
 .button {
+  display: inline-block;
   background-color: var(--background-color);
   color: var(--text-color);
   border: 1px solid var(--text-color);
   border-radius: var(--border-radius, 0);
-  padding: var(--spacing-inner) calc(var(--spacing-inner) * 2);
+  padding: var(--padding);
   font-size: 1.2rem;
   cursor: pointer;
   box-sizing: content-box;
@@ -21,13 +23,74 @@
   transform: translateX(-0.3rem) translateY(-0.3rem);
   margin-top: 0.3rem;
   margin-left: 0.3rem;
+  overflow: hidden;
+  z-index: 5;
+  text-decoration: none;
+
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    background-color: var(--text-color);
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    opacity: 0;
+  }
+}
+
+.button__text {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.button__content {
+  display: flex;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  & > svg {
+    height: 1em;
+    width: 1em;
+    margin-left: 0.5em;
+
+    & path {
+      fill: var(--text-color);
+    }
+  }
 }
 
 .button:hover {
-  background-color: var(--text-color);
+  &:before {
+    width: 100%;
+    transition: all 0.3s linear;
+    opacity: 1;
+  }
+
   color: var(--background-color);
   border: 1px solid var(--text-color);
-  transform: translateX(0) translateY(0);
   transition: all 0.2s linear;
-  box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+
+  & .button__content {
+    & > svg {
+      & path {
+        fill: var(--background-color);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .button:hover {
+    transition: none;
+
+    &:before {
+      transition: none;
+    }
+  }
 }

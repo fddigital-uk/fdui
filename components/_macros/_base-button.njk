@@ -1,7 +1,10 @@
-{% macro button(href, class) -%}
-<{% if href %}a href="{{ href }}"{% else %}button type="button"{% endif %}
+{% macro button(url, class, attrs) -%}
+<{% if url %}a href="{{ url }}"{% else %}button type="button"{% endif %}
+        {%- for name, value in attrs -%}
+            {{ name }}="{{ value }}"
+        {%- endfor -%}
         class="button
     {%- if class %} {{ class }}{%- endif -%}">
-    {{ caller() }}
-</{% if href %}a{% else %}button{% endif %}>
+    <span class="button__content">{{ caller() }}</span>
+</{% if url %}a{% else %}button{% endif %}>
 {%- endmacro %}

@@ -1,0 +1,14 @@
+<nav class="nav">
+    <ul class="nav__list">
+        {% for item in items -%}
+            {%- if item.isLink -%}
+                <li class="nav__item">
+                    {% render '@button', item %}
+                </li>
+            {%- endif -%}
+            {%- if item.isSubNav -%}
+                {% render '@drop-menu', { text: item.text, items: item.items, type: 'li', class: 'nav__item'} %}
+            {%- endif -%}
+        {%- endfor %}
+    </ul>
+</nav>

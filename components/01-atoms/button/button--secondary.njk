@@ -1,4 +1,4 @@
 {% from "@base-button" import button %}
-{% call button(null, 'button--secondary') -%}
-    {{ text }}
+{% call button(null, 'button--secondary ' + class, attrs) -%}
+    {{ text }} {% if icon %}{{ icon | icon }}{% endif %}
 {%- endcall %}
