@@ -11,8 +11,6 @@
 }
 
 .drop-menu__link {
-  display: flex;
-  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -49,8 +47,22 @@
   }
 }
 
+.drop-menu--sm-inline {
+  & .drop-menu__sub {
+    position: relative;
+  }
+}
+
 .drop-menu--open {
   & .drop-menu__sub {
     display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .drop-menu {
+    & .drop-menu__sub {
+      position: absolute;
+    }
   }
 }

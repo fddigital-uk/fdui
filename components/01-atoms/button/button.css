@@ -10,7 +10,7 @@
 }
 
 .button {
-  display: inline-block;
+  display: block;
   background-color: var(--background-color);
   color: var(--text-color);
   border: 1px solid var(--text-color);
@@ -18,14 +18,12 @@
   padding: var(--padding);
   font-size: 1.2rem;
   cursor: pointer;
-  box-sizing: content-box;
+  box-sizing: border-box;
   box-shadow: var(--shadow);
-  transform: translateX(-0.3rem) translateY(-0.3rem);
-  margin-top: 0.3rem;
-  margin-left: 0.3rem;
-  overflow: hidden;
   z-index: 5;
+  position: relative;
   text-decoration: none;
+  overflow: hidden;
 
   &:before {
     position: absolute;

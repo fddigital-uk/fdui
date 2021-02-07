@@ -1,4 +1,4 @@
-<{{ type }} class="drop-menu color--primary {{ class }}">
+<{{ type }} class="drop-menu drop-menu--sm-inline color--primary {{ class }}">
     {% render '@button', { text: text, icon: 'fi-rr-caret-down', class: 'drop-menu__link ', attrs: {'aria-expanded': 'false', 'aria-haspopup': 'true' } } %}
     <ul class="drop-menu__sub">
         {% for item in items -%}

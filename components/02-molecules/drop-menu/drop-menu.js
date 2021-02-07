@@ -7,6 +7,7 @@ class DropMenu {
     this.show = false;
     this.subMenu = element.querySelector('.drop-menu__sub');
     this.setUpEvents();
+    this.item.dropMenu = this;
   }
 
   setUpEvents() {
@@ -38,6 +39,12 @@ class DropMenu {
   }
 
   showSubMenu() {
+    const allMenus = document.querySelectorAll('.drop-menu');
+
+    allMenus.forEach(menu  => {
+      menu.dropMenu.hideSubMenu();
+    });
+
     this.item.classList.add('drop-menu--open');
     this.item.setAttribute('aria-expanded', "true");
     this.show = true;
