@@ -1,7 +1,5 @@
-import '../../components/01-atoms/button/button';
-import '../../components/01-atoms/image/image';
+import header from '../../components/03-organisms/header/header';
 
-import '../../components/02-molecules/drop-menu/drop-menu';
-import '../../components/02-molecules/navigation/navigation';
-
-import '../../components/03-organisms/header/header';
+window.addEventListener('DOMContentLoaded', () => {
+  header(document.querySelector('.header'));
+});

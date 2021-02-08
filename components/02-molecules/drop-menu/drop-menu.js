@@ -1,66 +1,59 @@
-import "./drop-menu.css";
+const dropMenu = function (dropMenu) {
+  const link = dropMenu.children[0];
+  const subMenu = dropMenu.querySelector('.drop-menu__sub');
+  let show = false;
+  let timer = null;
 
-class DropMenu {
-  constructor(element) {
-    this.item = element;
-    this.link = element.children[0];
-    this.show = false;
-    this.subMenu = element.querySelector('.drop-menu__sub');
-    this.setUpEvents();
-    this.item.dropMenu = this;
-  }
+  const init = () => {
+    link.addEventListener('click', toggleSubMenu);
+    dropMenu.addEventListener('mouseover', mouseOver);
+    dropMenu.addEventListener('mouseout', mouseOut);
+    dropMenu.dropMenu = {
+      hideSubMenu
+    };
+  };
 
-  setUpEvents() {
-    this.link.addEventListener('click', this.toggleSubMenu.bind(this));
-    this.item.addEventListener('mouseover', this.mouseOver.bind(this));
-    this.item.addEventListener('mouseout', this.mouseOut.bind(this));
-  }
-
-  mouseOver(event) {
-    if (this.timer) {
-      clearTimeout(this.timer)
+  const mouseOver = event => {
+    if (timer) {
+      clearTimeout(timer)
     }
-    if (!this.show) {
-      this.showSubMenu();
+    if (!show) {
+      showSubMenu();
     }
   }
 
-  mouseOut(event) {
-    this.timer = setTimeout(this.hideSubMenu.bind(this), 1000);
+  const mouseOut = event => {
+    timer = setTimeout(hideSubMenu, 1000);
   }
 
-  toggleSubMenu(event) {
-    if (this.show) {
-      this.hideSubMenu();
+  const toggleSubMenu = event => {
+    if (show) {
+      hideSubMenu();
     } else {
-      this.showSubMenu();
+      showSubMenu();
     }
     event.preventDefault();
   }
 
-  showSubMenu() {
+  const showSubMenu = () => {
     const allMenus = document.querySelectorAll('.drop-menu');
 
-    allMenus.forEach(menu  => {
+    allMenus.forEach(menu => {
       menu.dropMenu.hideSubMenu();
     });
 
-    this.item.classList.add('drop-menu--open');
-    this.item.setAttribute('aria-expanded', "true");
-    this.show = true;
+    dropMenu.classList.add('drop-menu--open');
+    dropMenu.setAttribute('aria-expanded', "true");
+    show = true;
   }
 
-  hideSubMenu() {
-    this.item.classList.remove('drop-menu--open');
-    this.item.setAttribute('aria-expanded', "false");
-    this.show = false;
+  const hideSubMenu = () => {
+    dropMenu.classList.remove('drop-menu--open');
+    dropMenu.setAttribute('aria-expanded', "false");
+    show = false;
   }
-}
 
-window.addEventListener('DOMContentLoaded', (e) => {
-  const dropMenus = document.querySelectorAll('.drop-menu');
+  init();
+};
 
-  dropMenus.forEach((el) => {
-    new DropMenu(el);
-  });
-});
+export default dropMenu;

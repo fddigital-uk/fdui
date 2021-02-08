@@ -1,11 +1,14 @@
 .image {
   max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 .image__frame {
   & > picture {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

@@ -1,0 +1,7 @@
+<div class="search">
+    <label for="" aria-label="Search text" class="search__label">
+        <input name="text" type="text" placeholder="Search text e.g. Product name" class="search__text">
+    </label>
+    {% render "@button--secondary", {text: 'Search', icon: 'fi-br-search', class: 'search__action'} %}
+    {% render "@button", {text: '', icon: 'fi-br-cross-small', class: 'search__cancel'} %}
+</div>

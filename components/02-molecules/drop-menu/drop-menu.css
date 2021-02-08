@@ -1,6 +1,6 @@
 .drop-menu {
   --drop-menu-sub-bg: var(--color-primary-comp);
-  --drop-menu-sub-border: 1px solid var(--color-primary);
+  --drop-menu-sub-border: var(--border);
   --drop-menu-sub-color: var(--color-primary);
   --drop-menu-sub-radius: var(--border-radius);
 }
@@ -27,6 +27,12 @@
   overflow: hidden;
   min-width: 15rem;
   z-index: 900;
+}
+
+.drop-menu--align-right {
+  & .drop-menu__sub {
+    right: 0;
+  }
 }
 
 .drop-menu__sub-item {

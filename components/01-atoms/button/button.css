@@ -1,35 +1,39 @@
 .button {
-  --background-color: var(--color-primary-comp);
-  --text-color: var(--color-primary);
-  --padding: var(--spacing-inner) calc(var(--spacing-inner) * 2);
+  --comp-bg-color: var(--color-primary-comp);
+  --comp-text-color: var(--color-primary);
+  --comp-padding: var(--spacing-inner) calc(var(--spacing-inner) * 2);
+  --comp-border-radius: var(--border-radius);
+  --comp-shadow: var(--shadow);
+  --comp-border: var(--border);
 }
 
 .button--secondary {
-  --background-color: var(--color-secondary-comp);
-  --text-color: var(--color-secondary);
+  --comp-bg-color: var(--color-secondary-comp);
+  --comp-text-color: var(--color-secondary);
 }
 
 .button {
-  display: block;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
-  border-radius: var(--border-radius, 0);
-  padding: var(--padding);
-  font-size: 1.2rem;
-  cursor: pointer;
+  background-color: var(--comp-bg-color);
+  border: var(--comp-border);
+  border-radius: var(--comp-border-radius, 0);
+  box-shadow: var(--comp-shadow);
   box-sizing: border-box;
-  box-shadow: var(--shadow);
-  z-index: 5;
+  color: var(--comp-text-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1.1em;
+  overflow: hidden;
+  padding: var(--comp-padding);
   position: relative;
   text-decoration: none;
-  overflow: hidden;
+  z-index: 5;
 
   &:before {
     position: absolute;
     content: '';
     display: block;
-    background-color: var(--text-color);
+    background-color: var(--comp-text-color);
     width: 0;
     height: 100%;
     top: 0;
@@ -42,6 +46,7 @@
 .button__text {
   text-align: left;
   flex-grow: 1;
+  line-height: 1;
 }
 
 .button__content {
@@ -51,14 +56,18 @@
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+  align-items: flex-end;
+
+  & > span + svg {
+    margin-left: 0.5em;
+  }
 
   & > svg {
-    height: 1em;
-    width: 1em;
-    margin-left: 0.5em;
+    height: 1.1em;
+    width: 1.1em;
 
     & path {
-      fill: var(--text-color);
+      fill: var(--comp-text-color);
     }
   }
 }
@@ -70,14 +79,14 @@
     opacity: 1;
   }
 
-  color: var(--background-color);
-  border: 1px solid var(--text-color);
+  color: var(--comp-bg-color);
+  border: var(--border-width) solid var(--comp-text-color);
   transition: all 0.2s linear;
 
   & .button__content {
     & > svg {
       & path {
-        fill: var(--background-color);
+        fill: var(--comp-bg-color);
       }
     }
   }

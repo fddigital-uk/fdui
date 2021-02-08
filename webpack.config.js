@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    main: ['./assets/css/main.css', './assets/js/main.js'],
+    main: ['./assets/js/main.js', './assets/css/main.css'],
   },
   output: {
     filename: 'js/[name].js',
@@ -36,14 +36,6 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                    require('postcss-nesting'),
-                    require('autoprefixer')
-                ],
-              },
-            },
           },
         ],
       },

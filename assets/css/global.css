@@ -1,0 +1,74 @@
+:root {
+  --color-primary: #38146a;
+  --color-primary-comp: #f6f0ff;
+  --color-secondary: #7e187c;
+  --color-secondary-comp: #f9f2f8;
+
+  --spacing: 2rem;
+  --spacing-inner: 1rem;
+  --component-spacing: 6rem;
+  --component-spacing-inner: 1.5rem;
+
+  --border-radius: 1rem;
+  --border-width: 0;
+  --border: var(--border) solid var(--color-primary);
+
+  --text-color: var(--color-primary);
+  --background-color: var(--color-primary);
+
+  --font-family: arial;
+  --font-family-heading: arial;
+
+  --shadow: -0.2rem -0.2rem 0.3rem 0.0rem rgba(255, 255, 255, 0.4),
+      0.2rem 0.2rem 0.3rem 0.0rem rgba(0, 0, 0, 0.3);
+  --container-width: 768px;
+}
+
+@custom-media --sm-viewport only screen and (min-width: 576px);
+@custom-media --md-viewport only screen and (min-width: 768px);
+@custom-media --lg-viewport only screen and (min-width: 1080px);
+@custom-media --xlg-viewport only screen and (min-width: 1400px);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: var(--font-family);
+}
+
+input {
+  border: 1px solid var(--color-primary-comp);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  font-size: 1.3rem;
+  padding: calc(var(--component-spacing-inner) / 2) var(--component-spacing-inner);
+  color: var(--color-primary)
+}
+
+@media (--sm-viewport) {
+  :root {
+    --container-width: 576px;
+  }
+}
+
+@media (--md-viewport) {
+  :root {
+    --container-width: 768px;
+    --component-spacing: 4rem;
+  }
+}
+
+@media (--lg-viewport) {
+  :root {
+    --component-spacing: 6rem;
+    --container-width: 1080px;
+  }
+}
+
+@media (--xlg-viewport) {
+  :root {
+    --container-width: 1200px;
+  }
+}
+

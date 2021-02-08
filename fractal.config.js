@@ -42,6 +42,17 @@ fractal.components.engine(nunjucks({
     json: function (obj) {
       return JSON.stringify(obj, null, '\t');
     },
+    svg: function (path) {
+      const file = `./public/${path}`;
+
+      try {
+        return nunjucksEnv.filters.safe(fs.readFileSync(file).toString());
+      } catch (err) {
+        console.error(err)
+      }
+
+      return `Could not load '${file}'.`;
+    },
     icon: function (icon) {
       const file = `./public/icons/${icon}.svg`;
 

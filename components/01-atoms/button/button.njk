@@ -1,7 +1,7 @@
 {% from "@base-button" import button %}
 {%- call button(url, class, attrs) -%}
    {% if icon %}
-      <span class="button__text">{{ text }}</span>
+      {% if text %}<span class="button__text">{{ text }}</span>{% endif %}
       {{ icon | icon }}
    {% else -%}
       {{ text }}

@@ -1,27 +1,9 @@
-:root {
-  --color-primary: #38146a;
-  --color-primary-comp: #f6f0ff;
-  --color-secondary: #7e187c;
-  --color-secondary-comp: #f9f2f8;
+@import "global.css";
 
-  --spacing-inner: 1rem;
+@import "../../components/01-atoms/button/button.css";
+@import "../../components/01-atoms/image/image.css";
 
-  --border-radius: 1rem;
-  --border-width: 0;
+@import "../../components/02-molecules/drop-menu/drop-menu.css";
+@import "../../components/02-molecules/navigation/navigation.css";
 
-  --text-color: var(--color-primary);
-  --background-color: var(--color-primary);
-
-  --font-family: arial;
-  --font-family-heading: arial;
-
-  --shadow: 0.2rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 15px;
-  font-family: var(--font-family);
-}
+@import "../../components/03-organisms/header/header.css";

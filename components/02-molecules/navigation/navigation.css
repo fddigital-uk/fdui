@@ -4,13 +4,7 @@
   padding: 0;
 
   & .nav__item:not(:first-child) {
-    margin-top: var(--spacing-inner);
-  }
-
-  .nav__item {
-    & > * {
-      --padding: var(--spacing-inner) calc(var(--spacing-inner) * 2);
-    }
+    margin-top: var(--component-spacing-inner);
   }
 }
 
@@ -24,6 +18,7 @@
 
     & .button {
       width: 100%;
+      display: block;
     }
   }
 }
@@ -33,7 +28,7 @@
     display: flex;
 
     & .nav__item:not(:first-child) {
-      margin-left: var(--spacing-inner);
+      margin-left: var(--component-spacing-inner);
       margin-top: 0;
     }
   }
