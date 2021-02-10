@@ -23,3 +23,25 @@
 .image--4-3 {
   aspect-ratio: 4 / 3;
 }
+
+.image__svg-inner {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+.image__svg {
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 100%;
+  max-width: 100%;
+  display: flex;
+  & img {
+    clip-path: url(#mask);
+    object-fit: cover;
+    width: 100%;
+  }
+}
