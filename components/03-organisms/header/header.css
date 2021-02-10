@@ -15,7 +15,6 @@
 
 .header__container {
   display: flex;
-  max-width: var(--comp-width);
   width: 100%;
 }
 
@@ -150,9 +149,6 @@
 }
 
 @media (--lg-viewport) {
-  .header__nav {
-    display: block;
-  }
 
   .header__logo-image {
     max-width: 200px;
@@ -160,5 +156,11 @@
     & svg {
       max-height: 50px;
     }
+  }
+}
+
+@media (--xlg-viewport) {
+  .header__nav {
+    display: block;
   }
 }

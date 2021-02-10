@@ -69,6 +69,7 @@
   .drop-menu {
     & .drop-menu__sub {
       position: absolute;
+      z-index: 500;
     }
   }
 }

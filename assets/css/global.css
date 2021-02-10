@@ -3,6 +3,7 @@
   --color-primary-comp: #f6f0ff;
   --color-secondary: #7e187c;
   --color-secondary-comp: #f9f2f8;
+  --color-neutral: #fff;
 
   --spacing: 2rem;
   --spacing-inner: 1rem;
@@ -16,26 +17,46 @@
   --text-color: var(--color-primary);
   --background-color: var(--color-primary);
 
-  --font-family: arial;
-  --font-family-heading: arial;
+  --font-family: Wotfard, arial;
+  --font-family-heading: Yrsa;
 
   --shadow: -0.2rem -0.2rem 0.3rem 0.0rem rgba(255, 255, 255, 0.4),
-      0.2rem 0.2rem 0.3rem 0.0rem rgba(0, 0, 0, 0.3);
+  0.2rem 0.2rem 0.3rem 0.0rem rgba(0, 0, 0, 0.3);
   --container-width: 768px;
+
+  --header-height: 125px;
+  --top-content-gap: calc(var(--header-height) + var(--spacing));
+  --font-size: 15px;
 }
 
 @custom-media --sm-viewport only screen and (min-width: 576px);
+
 @custom-media --md-viewport only screen and (min-width: 768px);
-@custom-media --lg-viewport only screen and (min-width: 968px);
+
+@custom-media --lg-viewport only screen and (min-width: 992px);
+
 @custom-media --xlg-viewport only screen and (min-width: 1200px);
+
 @custom-media --xxlg-viewport only screen and (min-width: 1400px);
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: var(--font-size);
   font-family: var(--font-family);
+}
+
+body {
+  background: repeating-linear-gradient(
+      -45deg,
+        var(--color-neutral),
+      var(--color-neutral) 45%,
+      var(--color-secondary-comp) 45%,
+      var(--color-secondary-comp) 50%,
+      var(--color-neutral) 50%
+  ) top left fixed;
+  background-size: 20px 20px;
 }
 
 input {
@@ -45,6 +66,30 @@ input {
   font-size: 1.3rem;
   padding: calc(var(--component-spacing-inner) / 2) var(--component-spacing-inner);
   color: var(--color-primary)
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Yrsa;
+  display: block;
+  margin-top: -0.3em;
+  margin-bottom: -0.3em;
+}
+
+.main {
+  margin-top: var(--top-content-gap);
+}
+
+.content {
+  --comp-spacing: var(--component-spacing-inner);
+
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: var(--comp-spacing);
+  }
 }
 
 .container {
@@ -61,11 +106,14 @@ input {
   :root {
     --container-width: 768px;
     --component-spacing: 4rem;
+    --header-height: 144px;
+    --font-size: 15px;
   }
 }
 
 @media (--lg-viewport) {
   :root {
+    --top-content-gap: calc(var(--header-height) + var(--spacing) * 2);
     --component-spacing: 6rem;
     --container-width: 1080px;
   }
