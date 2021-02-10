@@ -13,12 +13,14 @@
                 {% render "@button--secondary", {text: null, icon: 'fi-br-search', class: 'header__search-button'} %}
             </div>
             <div class="header__social"></div>
-            <div class="header__action"></div>
-            <div class="header__account"></div>
             <div class="header__search-container">
                 {% include "@search" %}
             </div>
         </div>
+        <div class="header__action">
+            {% render "@button--secondary", {text: null, icon: 'email', url: '/contact/' } %}
+        </div>
+        <div class="header__account"></div>
         <div class="header__nav-button">
         </div>
     </div>

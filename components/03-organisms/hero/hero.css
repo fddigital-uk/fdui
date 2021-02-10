@@ -48,7 +48,6 @@
     --bs-gutter-x: 2rem;
   }
 
-
   .hero__content {
     padding: calc(var(--comp-spacing) * 2) calc(var(--comp-spacing) * 1.5);
   }

@@ -17,7 +17,7 @@
   --text-color: var(--color-primary);
   --background-color: var(--color-primary);
 
-  --font-family: Wotfard, arial;
+  --font-family: Assistant, arial;
   --font-family-heading: Yrsa;
 
   --shadow: -0.2rem -0.2rem 0.3rem 0.0rem rgba(255, 255, 255, 0.4),
