@@ -1,0 +1,43 @@
+.account-summary {
+  --accsum-color: var(--color-primary);
+  --accsum-border-radius: var(--border-radius);
+  --accsum-spacing: var(--component-spacing-inner);
+}
+
+.account-summary--secondary {
+  --accsum-color: var(--color-secondary);
+}
+
+.account-summary {
+  padding: var(--accsum-spacing);
+  display: flex;
+  width: 300px;
+  flex-direction: row;
+}
+
+.account-summary__image {
+  width: 7rem;
+  height: 7rem;
+  border-radius: var(--accsum-border-radius);
+  overflow: hidden;
+
+  & img {
+    filter: chroma(1);
+  }
+}
+
+.account-summary__profile {
+  margin-left: var(--accsum-spacing);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--accsum-color);
+
+  & > a {
+    color: var(--accsum-color);
+  }
+
+  & > * {
+    flex-grow: 1;
+  }
+}

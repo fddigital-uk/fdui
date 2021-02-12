@@ -1,5 +1,6 @@
 import navigation from "../../02-molecules/navigation/navigation";
 import searchControl from '../../02-molecules/search/search';
+import dropMenu from "../../02-molecules/drop-menu/drop-menu";
 
 const header = function (header) {
   const headerContent = header.querySelector('.header__content');
@@ -26,6 +27,7 @@ const header = function (header) {
         onCloseSearch
     );
 
+    dropMenu(header.querySelector('.header__account-drop'))
     navigation(headerContent.querySelector('.nav'));
   }
 

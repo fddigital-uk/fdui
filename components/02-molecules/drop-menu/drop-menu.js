@@ -8,6 +8,8 @@ const dropMenu = function (dropMenu) {
     link.addEventListener('click', toggleSubMenu);
     dropMenu.addEventListener('mouseover', mouseOver);
     dropMenu.addEventListener('mouseout', mouseOut);
+    console.log(dropMenu);
+    console.log(hideSubMenu);
     dropMenu.dropMenu = {
       hideSubMenu
     };
@@ -39,7 +41,9 @@ const dropMenu = function (dropMenu) {
     const allMenus = document.querySelectorAll('.drop-menu');
 
     allMenus.forEach(menu => {
-      menu.dropMenu.hideSubMenu();
+      if (menu.dropMenu) {
+        menu.dropMenu.hideSubMenu();
+      }
     });
 
     dropMenu.classList.add('drop-menu--open');

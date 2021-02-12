@@ -5,6 +5,11 @@
   --drop-menu-sub-radius: var(--border-radius);
 }
 
+.drop-menu--secondary {
+  --drop-menu-sub-bg: var(--color-secondary-comp);
+  --drop-menu-sub-color: var(--color-secondary);
+}
+
 .drop-menu {
   position: relative;
   font-size: 1.2em;

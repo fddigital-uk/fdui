@@ -1,6 +1,9 @@
 @import "bootstrap/dist/css/bootstrap-grid.css";
 @import "global.css";
 
+/* Partials */
+@import "../../components/_partials/section-base/_section-base.css";
+
 /* Atoms */
 @import "../../components/01-atoms/button/button.css";
 @import "../../components/01-atoms/image/image.css";
@@ -9,39 +12,10 @@
 @import "../../components/02-molecules/drop-menu/drop-menu.css";
 @import "../../components/02-molecules/navigation/navigation.css";
 @import "../../components/02-molecules/image-card/image-card.css";
+@import "../../components/02-molecules/account-summary/account-summary.css";
 
 /* Organisms */
 @import "../../components/03-organisms/header/header.css";
 @import "../../components/03-organisms/hero/hero.css";
 
-.prototype {
-  --section-spacing: var(--spacing);
-  font-size: 1rem;
-  background-color: var(--color-secondary-comp);
-  padding: calc(var(--section-spacing) * 2) calc(var(--section-spacing) / 2);
 
-  &.content {
-    --comp-spacing: calc(var(--section-spacing) * 2);
-  }
-}
-
-.prototype__header {
-  text-align: center;
-  font-size: 2em;
-}
-
-@media (--md-viewport) {
-  .prototype__header {
-    font-size: 2.4em;
-  }
-
-  .prototype {
-    padding: calc(var(--section-spacing) * 3) calc(var(--section-spacing) / 2);
-  }
-}
-
-@media (--lg-viewport) {
-  .prototype__header {
-    font-size: 2.6em;
-  }
-}

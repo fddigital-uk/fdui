@@ -97,7 +97,7 @@
   }
 }
 
-.header__action {
+.header__action, .header__account {
   display: flex;
   align-items: center;
   & .button {

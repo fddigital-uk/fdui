@@ -1,0 +1,6 @@
+<{{ type }} class="drop-menu drop-menu--align-right drop-menu--sm-inline drop-menu--secondary {{ class }}">
+{% render '@button--secondary', { text: text, icon: 'fi-br-user', class: 'drop-menu__link ', attrs: {'aria-expanded': 'false', 'aria-haspopup': 'true' } } %}
+<ul class="drop-menu__sub">
+    {% render '@account-summary' %}
+</ul>
+</{{ type }}>
