@@ -2,10 +2,12 @@
   --accsum-color: var(--color-primary);
   --accsum-border-radius: var(--border-radius);
   --accsum-spacing: var(--component-spacing-inner);
+  --accsum-links-color: var(--color-primary);
 }
 
 .account-summary--secondary {
   --accsum-color: var(--color-secondary);
+  --accsum-links-color: var(--color-secondary);
 }
 
 .account-summary {
@@ -31,10 +33,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--accsum-color);
+
+ & > h2 {
+    color: var(--accsum-color);
+  }
 
   & > a {
-    color: var(--accsum-color);
+    color: var(--accsum-links-color);
   }
 
   & > * {

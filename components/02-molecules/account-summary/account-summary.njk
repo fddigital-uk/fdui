@@ -1,7 +1,7 @@
-<div class="account-summary">
-    <a href="/account/">{% render "@image--framed", { source: '/images/profile-image.jpg', class: 'account-summary__image'} %}</a>
+<div class="account-summary {{ class }}">
+    <a href="/account/">{% render "@image--framed", { source: imageSource, class: 'account-summary__image'} %}</a>
     <div class="account-summary__profile">
-        <h2>Nick Taylor</h2>
+        <h2>{{ name }}</h2>
         <a href="/account/">Dashboard</a>
         <a href="/account/settings/">Settings</a>
         <a href="/account/logout">Logout</a>
