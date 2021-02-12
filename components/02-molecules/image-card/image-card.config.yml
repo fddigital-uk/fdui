@@ -1,0 +1,7 @@
+context:
+  imageSource: '/images/purple-loft-lights.jpg'
+  title: Talk about something here
+  text: This is a small item to talk about here. Then link to other pages, or products.
+  centerContent: true
+  button:
+    text: Read more

@@ -1,2 +1,17 @@
 {% include "@header" %}
 {% render "@hero" %}
+
+<section class="prototype content">
+    <header class="prototype__header container">
+        <h1>This is a <strong>Section</strong> title</h1>
+    </header>
+    <div class="container">
+        <div class="row g-5 ">
+            {% for i in [1, 2, 3] %}
+                <div class="col-12 col-md-6 col-xl-4">
+                    {% render "@image-card" %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

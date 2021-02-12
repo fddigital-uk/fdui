@@ -43,13 +43,13 @@ const dropMenu = function (dropMenu) {
     });
 
     dropMenu.classList.add('drop-menu--open');
-    dropMenu.setAttribute('aria-expanded', "true");
+    link.setAttribute('aria-expanded', "true");
     show = true;
   }
 
   const hideSubMenu = () => {
     dropMenu.classList.remove('drop-menu--open');
-    dropMenu.setAttribute('aria-expanded', "false");
+    link.setAttribute('aria-expanded', "false");
     show = false;
   }
 

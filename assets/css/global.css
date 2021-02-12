@@ -27,6 +27,9 @@
   --header-height: 125px;
   --top-content-gap: calc(var(--header-height) + var(--spacing));
   --font-size: 15px;
+
+  --content-border: 2px solid var(--color-primary-comp);
+  --content-border-secondary: 1px solid var(--color-secondary);
 }
 
 @custom-media --sm-viewport only screen and (min-width: 576px);
@@ -70,13 +73,22 @@ input {
 
 h1, h2, h3, h4, h5 {
   font-family: Yrsa;
-  display: block;
-  margin-top: -0.3em;
+  display: inline-block;
+  margin-top: -0.1em;
   margin-bottom: -0.3em;
+  color: var(--color-primary);
+
+  & strong {
+    color: var(--color-secondary);
+  }
 }
 
 .main {
   margin-top: var(--top-content-gap);
+
+  & > *:not(:first-child) {
+    margin-top: var(--component-spacing);
+  }
 }
 
 .content {
@@ -94,6 +106,10 @@ h1, h2, h3, h4, h5 {
 
 .container {
   box-sizing: border-box;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 @media (--sm-viewport) {
@@ -114,7 +130,7 @@ h1, h2, h3, h4, h5 {
 @media (--lg-viewport) {
   :root {
     --top-content-gap: calc(var(--header-height) + var(--spacing) * 2);
-    --component-spacing: 6rem;
+    --component-spacing: 4rem;
     --container-width: 1080px;
   }
 }
@@ -124,4 +140,3 @@ h1, h2, h3, h4, h5 {
     --container-width: 1200px;
   }
 }
-

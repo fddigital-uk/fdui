@@ -42,6 +42,13 @@ fractal.components.engine(nunjucks({
     json: function (obj) {
       return JSON.stringify(obj, null, '\t');
     },
+    attrib: function (attrs) {
+      if (!attrs) return;
+      return nunjucksEnv.filters.safe(
+          Object
+              .entries(attrs)
+              .reduce((p, [key, value]) => `${p} ${key}="${value}"`, ""));
+    },
     svg: function (path) {
       const file = `./public/${path}`;
 

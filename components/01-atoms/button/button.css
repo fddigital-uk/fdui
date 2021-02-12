@@ -30,6 +30,15 @@
   z-index: 5;
   text-align: center;
 
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--text-color), var(--comp-shadow);
+    font-weight: bold;
+  }
+
   &:before {
     position: absolute;
     content: '';

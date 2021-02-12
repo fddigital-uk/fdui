@@ -1,5 +1,5 @@
 {% macro button(url, class, attrs) -%}
-<{% if url %}a href="{{ url }}"{% else %}button type="button"{% endif %}
+<{% if url %}a href="{{ url }}"{% else %}button type="button"{% endif %} {{ attrs | attrib }}
         {%- for name, value in attrs -%}
             {{ name }}="{{ value }}"
         {%- endfor -%}

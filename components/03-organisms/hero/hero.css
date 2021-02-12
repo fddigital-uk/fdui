@@ -5,10 +5,18 @@
 }
 
 .hero {
-  --comp-font-size: 1rem;
-  --comp-header-color: var(--color-primary);
-  --comp-header-highlight: var(--color-secondary);
-  font-size: var(--comp-font-size);
+  --hero-font-size: 1rem;
+  --hero-header-color: var(--color-primary);
+  --hero-header-highlight: var(--color-secondary);
+  --hero-border: var(--content-border);
+  --hero-bg-color: var(--color-neutral);
+  font-size: var(--hero-font-size);
+}
+
+.hero--alt {
+  --hero-bg-color: var(--color-secondary-comp);
+  --hero-border: var(--content-border-secondary);
+  --comp-border: var(--hero-border);
 }
 
 .hero__row {
@@ -17,11 +25,11 @@
 }
 
 .hero__content {
-  --comp-spacing: calc(var(--component-spacing-inner) * 1.5);
-  padding: calc(var(--comp-spacing) * 2) var(--comp-spacing);
-  background-color: var(--color-neutral);
+  --hero-spacing: calc(var(--component-spacing-inner) * 1.5);
+  padding: calc(var(--hero-spacing) * 2) var(--hero-spacing);
+  background-color: var(--hero-bg-color);
   border-radius: calc(var(--border-radius) * 2);
-  border: 2px solid var(--color-primary-comp);
+  border: var(--hero-border);
   & p {
     font-size: 1.1em;
   }
@@ -30,10 +38,10 @@
 .hero__heading {
   font-size: 1.8em;
   line-height: 1;
-  color: var(--comp-header-color);
+  color: var(--hero-header-color);
 
   & strong {
-    color: var(--comp-header-highlight);
+    color: var(--hero-header-highlight);
   }
 }
 
@@ -44,12 +52,12 @@
 
 @media (--md-viewport) {
   .hero {
-    --comp-font-size: 1.1rem;
+    --hero-font-size: 1.1rem;
     --bs-gutter-x: 2rem;
   }
 
   .hero__content {
-    padding: calc(var(--comp-spacing) * 2) calc(var(--comp-spacing) * 1.5);
+    padding: calc(var(--hero-spacing) * 2) calc(var(--hero-spacing) * 1.5);
   }
 
   .buttons {
@@ -66,17 +74,17 @@
 @media (--xlg-viewport) {
   .hero {
     --bs-gutter-x: 6rem;
-    --comp-font-size: 1.3rem;
+    --hero-font-size: 1.3rem;
   }
 
   .hero__content {
-    padding: calc(var(--comp-spacing) * 2.5) calc(var(--comp-spacing) * 2);
+    padding: calc(var(--hero-spacing) * 2.5) calc(var(--hero-spacing) * 2);
   }
 }
 
 @media (--xxlg-viewport) {
   .hero {
-    --comp-font-size: 1.4rem;
+    --hero-font-size: 1.4rem;
   }
 }
 

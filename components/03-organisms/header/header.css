@@ -11,6 +11,7 @@
   width: 100%;
   justify-content: center;
   padding: var(--spacing);
+  z-index: 900;
 }
 
 .header__container {
@@ -34,9 +35,10 @@
   }
 
   & .header__search-container {
-    transition: all 0.4s ease-in;
+    transition: opacity 0.4s ease-in;
     pointer-events: none;
     opacity: 0;
+    visibility: hidden;
   }
 
   &.header__content--search {
@@ -48,9 +50,10 @@
     }
 
     & .header__search-container {
-      transition: all 0.4s ease-in;
+      transition: opacity 0.4s ease-in;
       pointer-events: all;
       opacity: 1;
+      visibility: visible;
     }
   }
 }

@@ -1,0 +1,16 @@
+<div class="image-card content
+    {%- if imageLeft %} image-card--left{% endif -%}
+    {%- if imageRight %} image-card--right{% endif -%}
+    {%- if theme %} image-card--{{ theme }}{% endif -%}
+">
+    {% render "@image--framed", { source: imageSource, class: 'image-card__image'} %}
+    <div class="image-card__item {% if centerContent %} image-card__item--center{% endif %}">
+        <div class="image-card__container">
+            <h2>{{ title }}</h2>
+            <div class="image-card__content">
+                <p>{{ text }}</p>
+            </div>
+            {% render "@button", {text: button.text} %}
+        </div>
+    </div>
+</div>
