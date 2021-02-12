@@ -5,6 +5,10 @@
 {%- endblock %}
 
 {% block section_header %}
+    {{ super() }}
+{% endblock %}
+
+{% block section_header_content %}
     <h1>This is a <strong>Section</strong> title</h1>
 {% endblock %}
 

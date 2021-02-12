@@ -1,4 +1,14 @@
 {% include "@header" %}
 {% render "@hero" %}
 {% render "@section-cards" %}
-
+<div class="container">
+    {% render "@image-card--image-left", {
+        imageSource: '/images/purple-product.jpg',
+        title: 'This is a great product',
+        button: { text: 'Add to basket' },
+        centerContent: true,
+        text: 'Morbi eget vulputate mauris. Mauris nec tortor risus. Nam posuere ullamcorper lacus, posuere suscipit odio ullamcorper et. Nullam mauris augue, tempor in est ac, mollis vestibulum sem. Curabitur pellentesque luctus purus, sed feugiat enim suscipit eget. In vitae dapibus risus. Nulla varius tristique nisl.',
+        imageLeft: true
+    } %}
+</div>
+{% include "@footer" %}

@@ -1,0 +1,41 @@
+.footer {
+  --footer-bg-color: var(--color-primary-comp);
+  --footer-padding: var(--component-spacing);
+  --footer-spacing: var(--spacing-inner);
+  --footer-link-color: var(--color-secondary);
+  --footer-font-size: var(--font-size);
+}
+
+.footer {
+  background-color: var(--footer-bg-color);
+  padding: var(--footer-padding);
+  font-size: var(--footer-font-size);
+
+  & .content {
+    --comp-spacing: var(--footer-spacing);
+    font-size: 1.2em;
+  }
+}
+
+.footer__copyright {
+  text-align: center;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & > li:not(:first-child) {
+    padding-top: calc(var(--footer-spacing) / 2);
+  }
+}

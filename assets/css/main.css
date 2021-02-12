@@ -17,5 +17,6 @@
 /* Organisms */
 @import "../../components/03-organisms/header/header.css";
 @import "../../components/03-organisms/hero/hero.css";
+@import "../../components/03-organisms/footer/footer.css";
 
 

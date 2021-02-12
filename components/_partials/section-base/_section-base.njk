@@ -1,10 +1,12 @@
 <section class="section content {% block section_classes %}{% endblock %}">
-    <header class="section__header container">
-        {% block section_header %}
-        {% endblock %}
-    </header>
+    {%- block section_header %}
+        <header class="section__header container">
+            {% block section_header_content %}
+            {% endblock %}
+        </header>
+    {% endblock -%}
     <div class="container">
-        {% block section_content %}
-        {% endblock %}
+        {%- block section_content %}
+        {% endblock -%}
     </div>
 </section>
