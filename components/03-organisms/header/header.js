@@ -1,6 +1,7 @@
 import navigation from "../../02-molecules/navigation/navigation";
 import searchControl from '../../02-molecules/search/search';
 import dropMenu from "../../02-molecules/drop-menu/drop-menu";
+import menuButton from "../../02-molecules/menu-button/menu-button";
 
 const header = function (header) {
   const headerContent = header.querySelector('.header__content');
@@ -17,6 +18,16 @@ const header = function (header) {
     searchComponent.setAttribute('aria-hidden', "false");
   }
 
+  const onToggleMenu = (menuIsOpen) => {
+    if (menuIsOpen) {
+      header.classList.add('header__menu-open');
+      document.body.style = 'overflow: hidden; max-height: 100vh;';
+    } else {
+      header.classList.remove('header__menu-open');
+      document.body.style = '';
+    }
+  }
+
   const init = () => {
     if (searchButton) {
       searchButton.addEventListener('click', onOpenSearch);
@@ -28,6 +39,7 @@ const header = function (header) {
     );
 
     dropMenu(header.querySelector('.header__account-drop'))
+    menuButton(header.querySelector('.header__menu-button'), onToggleMenu);
     navigation(headerContent.querySelector('.nav'));
   }
 

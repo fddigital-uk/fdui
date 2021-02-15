@@ -1,0 +1,19 @@
+.menu-button {
+  --menu-button-color: var(--color-secondary);
+
+  & .hamburger {
+    --hamburger-colour: var(--menu-button-color);
+  }
+
+  &:hover .hamburger {
+    --hamburger-colour: var(--color-secondary-comp);
+  }
+}
+
+.menu-button {
+  --comp-padding: 1rem;
+
+  & .hamburger {
+    pointer-events: none;
+  }
+}

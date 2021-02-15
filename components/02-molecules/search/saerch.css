@@ -1,0 +1,44 @@
+.search {
+  display: flex;
+
+  & > *:not(:first-child) {
+    margin-left: var(--component-spacing-inner);
+  }
+}
+
+.search__text {
+  width: 100%;
+}
+
+.search__label {
+  display: flex;
+  flex-grow: 1;
+}
+
+.search__cancel {
+  --comp-padding: 1rem;
+}
+
+.search__action {
+  --comp-padding: 1rem;
+
+  & .button__text {
+    display: none;
+
+    & + svg {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (--md-viewport) {
+  .search__action {
+    & .button__text {
+      display: block;
+
+      & + svg {
+        margin-left: var(--spacing-inner);
+      }
+    }
+  }
+}

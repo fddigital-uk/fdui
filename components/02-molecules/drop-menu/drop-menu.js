@@ -8,8 +8,6 @@ const dropMenu = function (dropMenu) {
     link.addEventListener('click', toggleSubMenu);
     dropMenu.addEventListener('mouseover', mouseOver);
     dropMenu.addEventListener('mouseout', mouseOut);
-    console.log(dropMenu);
-    console.log(hideSubMenu);
     dropMenu.dropMenu = {
       hideSubMenu
     };

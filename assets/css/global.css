@@ -30,6 +30,15 @@
 
   --content-border: 2px solid var(--color-primary-comp);
   --content-border-secondary: 1px solid var(--color-secondary);
+
+  --body-bg: repeating-linear-gradient(
+      -45deg,
+      var(--color-neutral),
+      var(--color-neutral) 45%,
+      var(--color-secondary-comp) 45%,
+      var(--color-secondary-comp) 50%,
+      var(--color-neutral) 50%
+  ) top left / 20px 20px fixed ;
 }
 
 @custom-media --sm-viewport only screen and (min-width: 576px);
@@ -51,15 +60,8 @@ body {
 }
 
 body {
-  background: repeating-linear-gradient(
-      -45deg,
-        var(--color-neutral),
-      var(--color-neutral) 45%,
-      var(--color-secondary-comp) 45%,
-      var(--color-secondary-comp) 50%,
-      var(--color-neutral) 50%
-  ) top left fixed;
-  background-size: 20px 20px;
+  background: var(--body-bg);
+  --bs-gutter-x: 1.5rem;
 }
 
 input {

@@ -9,21 +9,21 @@
         </div>
         <div class="header__content">
             <div class="header__nav">{% render "@navigation" %}</div>
+            <div class="header__action">
+                {% render "@button--secondary", {text: 'Get in touch', icon: 'email', url: '/contact/' } %}
+            </div>
+            <div class="header__account">
+                {% render "@drop-menu--account", { text: 'My account', type: 'div', class: 'header__account-drop'} %}
+            </div>
             <div class="header__search">
                 {% render "@button--secondary", {text: null, icon: 'fi-br-search', class: 'header__search-button'} %}
             </div>
-            <div class="header__social"></div>
             <div class="header__search-container">
                 {% render "@search", { attrs: {'aria-hidden': 'true'} } %}
             </div>
         </div>
-        <div class="header__action">
-            {% render "@button--secondary", {text: null, icon: 'email', url: '/contact/' } %}
-        </div>
-        <div class="header__account">
-            {% render "@drop-menu--account", { type: 'div', class: 'header__account-drop'} %}
-        </div>
         <div class="header__nav-button">
+            {% render "@menu-button", {class: 'header__menu-button'} %}
         </div>
     </div>
 </header>

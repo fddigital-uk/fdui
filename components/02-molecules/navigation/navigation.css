@@ -8,10 +8,15 @@
   }
 }
 
-@media (max-width: 767px) {
-  .nav__list {
-    --border-radius: 0;
+.nav__item {
+  display: block;
+
+  & .button {
+    display: block;
   }
+}
+
+@media (max-width: 767px) {
   .nav__item {
     box-sizing: border-box;
     width: 100%;

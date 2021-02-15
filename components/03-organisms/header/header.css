@@ -1,5 +1,7 @@
 .header {
   --comp-width: var(--container-width);
+  --header-padding: var(--spacing);
+  --header-spacing: var(--component-spacing-inner);
 }
 
 .header {
@@ -10,18 +12,26 @@
   left: 0;
   width: 100%;
   justify-content: center;
-  padding: var(--spacing);
   z-index: 900;
+  background: transparent;
+  background-size: 20px 20px;
 }
 
 .header__container {
   display: flex;
   width: 100%;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
 
   & > *:not(:first-child) {
-    margin-left: var(--component-spacing-inner);
+    margin-left: var(--header-spacing);
+  }
+
+  & .button {
+    height: 3.33rem;
   }
 }
+
 
 .header__content {
   display: flex;
@@ -30,7 +40,11 @@
   flex-grow: 1;
   justify-content: flex-end;
 
-  & .header__nav, & .header__social, & .header__action, & .header__account, & .header__search-button {
+  & > *:not(:first-child) {
+    margin-left: var(--header-spacing);
+  }
+
+  & .header__nav, & .header__social, & .header__action, & .header__account, & .header__search-button, & .header__nav-button {
     transition: all 0.4s ease-in;
   }
 
@@ -42,7 +56,7 @@
   }
 
   &.header__content--search {
-    & .header__nav, & .header__social, & .header__action, & .header__account, & .header__search-button {
+    & .header__nav, & .header__social, & .header__action, & .header__account, & .header__search-button, & .header__nav-button {
       transition: all 0.4s ease-out;
       transform: rotateX(-75deg);
       transform-origin: bottom;
@@ -97,12 +111,17 @@
   }
 }
 
-.header__action, .header__account {
+.header__action, .header__account, .header__nav-button {
   display: flex;
   align-items: center;
+
   & .button {
     --comp-padding: 1rem 1.5rem;
   }
+}
+
+.header__account, .header__action, .header__search {
+  display: none;
 }
 
 .header__search {
@@ -113,35 +132,83 @@
   }
 }
 
-.search {
+.header__buttons {
   display: flex;
+}
 
-  & > *:not(:first-child) {
-    margin-left: var(--component-spacing-inner);
+.header__menu-open {
+  transition: all 0.3s ease-in;
+  background: var(--body-bg);
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: scroll;
+
+  & .header__container {
+    display: grid;
+    grid-template-areas: "logo nav"
+                        "content content";
+    grid-gap: var(--header-spacing);
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr;
   }
-}
 
-.search__text {
-  width: 100%;
-}
+  & .header__logo {
+    grid-area: logo;
+  }
 
-.search__label {
-  display: flex;
-  flex-grow: 1;
-}
+  & .header__content {
+    grid-area: content;
+    margin: 0;
+    flex-direction: column-reverse;
 
-.search__cancel {
-  --comp-padding: 1rem;
-}
+    & > * {
+      margin: 0;
+    }
+  }
 
-.search__action {
-  --comp-padding: 1rem;
+  & .header__nav {
+    display: block;
+    margin-bottom: var(--spacing);
+    width: 100%;
+  }
 
-  & .button__text {
+  & .header__search-container {
+    padding: 0;
+    margin: 0;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    pointer-events: all;
+    width: 100%;
+  }
+
+  & .header__nav-button {
+    grid-area: nav;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+  }
+
+  & .button__content {
+    justify-content: flex-start;
+  }
+
+  & .header__action, & .header__account {
+    display: block;
+    width: 100%;
+    & .button {
+      width: 100%;
+    }
+  }
+
+  & .search__cancel {
     display: none;
+  }
 
-    & + svg {
-      margin-left: 0;
+  & .header__content {
+    & > * {
+      margin-top: var(--header-spacing);
     }
   }
 }
@@ -154,18 +221,13 @@
       max-height: 40px;
     }
   }
-
-  .search__action {
-    & .button__text {
-      display: block;
-
-      & + svg {
-        margin-left: var(--spacing-inner);
-      }
-    }
-  }
 }
 
+@media (--lg-viewport) {
+  .header__search {
+    display: flex;
+  }
+}
 
 @media (--xlg-viewport) {
   .header__logo-image {
@@ -175,6 +237,23 @@
       max-height: 50px;
     }
   }
+
+  .header__nav-button {
+    display: none;
+  }
+
+  .header__account, .header__action {
+    display: flex;
+
+    & .button__text {
+      display: none;
+    }
+
+    & .button__content > svg {
+      margin-left: 0;
+    }
+  }
+
   .header__nav {
     display: block;
   }

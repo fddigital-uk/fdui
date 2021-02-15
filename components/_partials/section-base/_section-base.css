@@ -14,7 +14,7 @@
 .section {
   font-size: 1rem;
   background-color: var(--section-bg-color);
-  padding: calc(var(--section-spacing) * 2) calc(var(--section-spacing) / 2);
+  padding: calc(var(--section-spacing) * 2) 0;
 
   &.content {
     --comp-spacing: calc(var(--section-spacing) * 2);

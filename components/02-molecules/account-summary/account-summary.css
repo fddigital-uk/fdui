@@ -15,11 +15,12 @@
   display: flex;
   width: 300px;
   flex-direction: row;
+  font-size: 0.95rem;
 }
 
 .account-summary__image {
-  width: 7rem;
-  height: 7rem;
+  width: 7em;
+  height: 7em;
   border-radius: var(--accsum-border-radius);
   overflow: hidden;
 
@@ -34,15 +35,23 @@
   flex-direction: column;
   justify-content: center;
 
- & > h2 {
+  & > h2 {
     color: var(--accsum-color);
   }
 
   & > a {
     color: var(--accsum-links-color);
+    display: flex;
+    align-items: center;
   }
 
   & > * {
     flex-grow: 1;
+  }
+}
+
+@media (--md-viewport) {
+  .account-summary {
+    font-size: 1rem;
   }
 }
