@@ -39,6 +39,8 @@
       var(--color-secondary-comp) 50%,
       var(--color-neutral) 50%
   ) top left / 20px 20px fixed ;
+
+  --vertical-height: calc(var(--vh, 1vh) * 100);
 }
 
 @custom-media --sm-viewport only screen and (min-width: 576px);
@@ -112,6 +114,11 @@ h1, h2, h3, h4, h5 {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.prevent-scroll {
+  overflow: hidden;
+  height: var(--vertical-height);
 }
 
 @media (--sm-viewport) {

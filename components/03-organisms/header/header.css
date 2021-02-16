@@ -139,7 +139,7 @@
 .header__menu-open {
   transition: all 0.3s ease-in;
   background: var(--body-bg);
-  height: 100vh;
+  height: var(--vertical-height);
   box-sizing: border-box;
   overflow: scroll;
 

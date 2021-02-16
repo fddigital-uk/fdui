@@ -21,10 +21,10 @@ const header = function (header) {
   const onToggleMenu = (menuIsOpen) => {
     if (menuIsOpen) {
       header.classList.add('header__menu-open');
-      document.body.style = 'overflow: hidden; max-height: 100vh;';
+      document.body.classList.add('prevent-overflow')
     } else {
       header.classList.remove('header__menu-open');
-      document.body.style = '';
+      document.body.classList.remove('prevent-scroll')
     }
   }
 
